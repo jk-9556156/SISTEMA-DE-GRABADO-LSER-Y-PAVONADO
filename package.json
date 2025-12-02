@@ -1,14 +1,15 @@
 {
-  "name": "whatsapp-bot",
-  "version": "1.0.0", 
-  "main": "server.js",
+  "name": "laser-control-desktop",
+  "version": "0.1.0",
+  "description": "Pequeña app para controlar el servidor del Sistema de Grabado Láser (ON/OFF/Abrir)",
+  "main": "main.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "pkg server.js --target node18-win-x64 --output whatsapp-bot.exe"
+    "start": "electron .",
+    "package-win-base": "electron-packager . LaserControl --platform=win32 --arch=x64 --out=..\\dist --overwrite",
+    "package-win": "node build-package.js"
   },
-    "dependencies": {
-    "express": "^4.18.2",
-    "whatsapp-web.js": "^1.23.0",
-    "qrcode": "^1.5.3"
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-packager": "^17.1.0"
   }
 }
